@@ -110,8 +110,9 @@ SELECT empno, ename, sal, RANK() OVER (ORDER BY sal DESC) RANK,
  WHERE deptno = 20; 
  -- row_number 함수는 출력되는 결과에 번호를 순서대로 부여, over 다음 괄호 안에 반드시 order by절을 기술해야 함.
 ```
- 
-`기술하지 않으면 다음의 에러 발생`
+<br>
+
+> `기술하지 않으면 다음의 에러 발생`
 
 ```sql
  SELECT empno, ename, sal, ROW_NUMBER() OVER () 번호
