@@ -57,12 +57,16 @@ SELECT rpad(' ', level+3) || ename as employee, level, sal, job
 
 <code>
 
+### point 1.
+
  - 계층형 질의문의 키워드인 CONNECT BY와 START WITH절을 사용하면 PSEUDO COLUMN인 LEVEL을 출력할 수 있음   
  - RPAD로 이름 앞에 공백을 level 수의 3배가 되도록 추가 -> 시각화   
  - START WITH 절로 루트 노드의 데이터를 지정   
  - CONNECT BY 절은 부모 노드와 자식 노드의 관계를 지정   
 
 <br>
+
+### point 2.
 
  - 해당 SQL문은 순환 구조 SQL 문이라고 함   
  - 순환 구조 SQL에서는 WHERE가 처리 범위를 줄여주는 선행 조건이 아님   
@@ -71,6 +75,8 @@ SELECT rpad(' ', level+3) || ename as employee, level, sal, job
  - 해당 쿼리 내의 WHERE 절 혹은 START WITH의 해당 컬럼의 비교 값에서 INLINE VIEW를 사용해서 범위를 줄여줘야 함   
  
  <br>
+
+ ### point 3.
 
  - PRIOR 절은 반대편에 기술해도 되고 SELECT 절에 기술해도 됨   
  - 최초 시작한 노드의 PRIOR절에 기술되는 컬럼(A) 값을 읽어 PRIOR절 내 =의 반대편 컬럼(B)에 상수를 제공하겠다는 의미   
